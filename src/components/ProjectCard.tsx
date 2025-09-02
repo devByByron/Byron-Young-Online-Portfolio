@@ -1,0 +1,145 @@
+import { ExternalLink, Github } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  featured?: boolean;
+}
+
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  technologies,
+  githubUrl,
+  liveUrl,
+  featured = false
+}: ProjectCardProps) {
+  return (
+    <div className={`group glass-hover rounded-2xl overflow-hidden hover-lift hover-tilt ${
+      featured ? 'lg:col-span-2 glow' : ''
+    }`}>
+      {/* Image Container */}
+      <div className="relative overflow-hidden bg-muted">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-48 lg:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        
+        {/* Action buttons on hover */}
+        <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {githubUrl && (
+            <Button
+              size="sm"
+              variant="secondary"
+              className="glass-hover"
+              asChild
+            >
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} source code`}
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            </Button>
+          )}
+          {liveUrl && (
+            <Button
+              size="sm"
+              className="bg-hero-gradient"
+              asChild
+            >
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} live demo`}
+              >
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+          )}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-3">
+          <h3 className="text-xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+            {title}
+          </h3>
+          {featured && (
+            <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+              Featured
+            </Badge>
+          )}
+        </div>
+        
+        <p className="text-muted-foreground text-sm lg:text-base mb-4 leading-relaxed">
+          {description}
+        </p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {technologies.map((tech, index) => (
+            <Badge 
+              key={index} 
+              variant="outline" 
+              className="text-xs bg-secondary/50 border-secondary hover:border-primary/40 transition-colors"
+            >
+              {tech}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Links for non-hover state */}
+        <div className="flex space-x-3 lg:opacity-100 group-hover:lg:opacity-0 transition-opacity duration-300">
+          {githubUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1 border-border hover:border-primary/40"
+              asChild
+            >
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-4 w-4 mr-2" />
+                Code
+              </a>
+            </Button>
+          )}
+          {liveUrl && (
+            <Button
+              size="sm"
+              className="flex-1 bg-hero-gradient"
+              asChild
+            >
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Demo
+              </a>
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
