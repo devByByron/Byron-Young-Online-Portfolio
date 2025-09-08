@@ -85,7 +85,7 @@ export default function Portfolio() {
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = '/resume.pdf';
-                  link.download = 'Alex_Developer_Resume.pdf';
+                  link.download = 'Byron_Young_Resume.pdf';
                   link.click();
                 }}
               >

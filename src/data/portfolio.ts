@@ -5,19 +5,19 @@ import projectWeather from '@/assets/project-weather.jpg';
 import developerPortrait from '@/assets/developer-portrait.jpg';
 
 export const personalInfo = {
-  name: "Alex Developer",
-  title: "Full-Stack Software Developer",
+  name: "Byron Young",
+  title: "Digital Associate",
   tagline: "Building exceptional digital experiences with modern web technologies",
-  email: "alex@developer.com",
+  email: "byron@young.com",
   location: "San Francisco, CA",
   yearsOfExperience: 5,
   bio: "Passionate full-stack developer with 5+ years of experience creating scalable web applications. I specialize in React, TypeScript, and Node.js, with a keen eye for modern UI/UX design. I love turning complex problems into simple, beautiful solutions.",
   portrait: developerPortrait,
   socialLinks: {
-    github: "https://github.com/alexdeveloper",
-    linkedin: "https://linkedin.com/in/alexdeveloper",
-    twitter: "https://twitter.com/alexdeveloper",
-    email: "mailto:alex@developer.com"
+    github: "https://github.com/byronyoung",
+    linkedin: "https://linkedin.com/in/byronyoung", 
+    twitter: "https://twitter.com/byronyoung",
+    email: "mailto:byron@young.com"
   }
 };
 
