@@ -36,12 +36,12 @@ export default function ProjectCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Action buttons on hover */}
-        <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
           {githubUrl && (
             <Button
               size="sm"
               variant="secondary"
-              className="glass-hover"
+              className="glass-hover shadow-lg backdrop-blur-sm"
               asChild
             >
               <a
@@ -57,7 +57,7 @@ export default function ProjectCard({
           {liveUrl && (
             <Button
               size="sm"
-              className="bg-hero-gradient"
+              className="bg-hero-gradient shadow-lg"
               asChild
             >
               <a
@@ -103,8 +103,8 @@ export default function ProjectCard({
           ))}
         </div>
 
-        {/* Links for non-hover state */}
-        <div className="flex space-x-3 lg:opacity-100 group-hover:lg:opacity-0 transition-opacity duration-300">
+        {/* Links - always visible */}
+        <div className="flex space-x-3">
           {githubUrl && (
             <Button
               variant="outline"
