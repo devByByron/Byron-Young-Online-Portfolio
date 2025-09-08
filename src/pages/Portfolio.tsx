@@ -42,12 +42,13 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Three.js Background */}
-        <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 opacity-80">
           <ThreeScene className="w-full h-full" />
         </div>
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+        {/* Space Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-background/90" />
         
         {/* Content */}
         <div className="container relative z-10 px-4 lg:px-8 text-center">
