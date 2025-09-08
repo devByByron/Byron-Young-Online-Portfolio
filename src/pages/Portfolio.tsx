@@ -236,7 +236,7 @@ export default function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 lg:py-32 bg-muted/20">
+      <section id="education" className="py-20 lg:py-32 bg-muted/20">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
             <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
