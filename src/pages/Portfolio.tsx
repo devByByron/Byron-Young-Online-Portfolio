@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Twitter, Download, Code, Briefcase, GraduationCap, FileBadge2 } from 'lucide-react';
 
 import Navigation from '@/components/Navigation';
@@ -150,19 +151,19 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="animate-on-scroll">
-              <div className="relative">
-                <div className="glass rounded-2xl p-2 hover-lift">
+            <div className="animate-on-scroll flex justify-center lg:justify-end">
+              <div className="relative max-w-sm">
+                <div className="glass rounded-2xl p-3 hover-lift">
                   <img
                     src={personalInfo.portrait}
                     alt="Developer portrait"
-                    className="w-full w-48 rounded-xl"
+                    className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-cover rounded-xl shadow-lg"
                     loading="lazy"
                   />
                 </div>
                 {/* Floating elements */}
-                <div className="absolute -top-6 -right-6 w-12 h-12 bg-primary/20 rounded-full animate-float" />
-                <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-accent/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+                <div className="absolute -top-4 -right-4 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/20 rounded-full animate-float" />
+                <div className="absolute -bottom-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 bg-accent/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
               </div>
             </div>
           </div>
@@ -249,50 +250,78 @@ export default function Portfolio() {
             </h2>
           </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
-  {education.map((edu, index) => (
-    <div
-      key={index}
-      className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between"
-    >
-      {/* Top content */}
-      <div>
-        <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-            {edu.link ? (
-              <FileBadge2 className="h-6 w-6 text-primary" />
+<TooltipProvider>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
+    {education.map((edu, index) => {
+      const truncateText = (text: string, maxLength: number = 120) => {
+        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+      };
+
+      const isTextTruncated = edu.details.length > 120;
+
+      return (
+        <div
+          key={index}
+          className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
+        >
+          {/* Top content */}
+          <div className="flex-1">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                {edu.link ? (
+                  <FileBadge2 className="h-6 w-6 text-primary" />
+                ) : (
+                  <GraduationCap className="h-6 w-6 text-primary" />
+                )}
+              </div>
+              <Badge variant="outline" className="bg-secondary/50 border-secondary flex-shrink-0">
+                {edu.year}
+              </Badge>
+            </div>
+            <h3 className="font-bold text-foreground mb-2 line-clamp-2">{edu.degree}</h3>
+            <p className="text-primary font-semibold mb-3 line-clamp-1">{edu.institution}</p>
+            
+            {isTextTruncated ? (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <p className="text-sm text-muted-foreground cursor-help leading-relaxed">
+                    {truncateText(edu.details)}
+                  </p>
+                </TooltipTrigger>
+                <TooltipContent side="top" className="max-w-xs p-3 text-sm bg-popover border border-border shadow-lg">
+                  <p className="leading-relaxed">{edu.details}</p>
+                </TooltipContent>
+              </Tooltip>
             ) : (
-              <GraduationCap className="h-6 w-6 text-primary" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {edu.details}
+              </p>
             )}
           </div>
-          <Badge variant="outline" className="bg-secondary/50 border-secondary">
-            {edu.year}
-          </Badge>
-        </div>
-        <h3 className="font-bold text-foreground mb-2">{edu.degree}</h3>
-        <p className="text-primary font-semibold mb-3">{edu.institution}</p>
-        <p className="text-sm text-muted-foreground">{edu.details}</p>
-      </div>
 
-      {/* Bottom button (aligned) */}
-      {edu.link ? (
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full glass-hover mt-6"
-          asChild
-        >
-          <a href={edu.link} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            View Certificate
-          </a>
-        </Button>
-      ) : (
-        <div className="mt-6 h-[38px]" /> 
-      )}
-    </div>
-  ))}
-</div>
+          {/* Bottom button (aligned) */}
+          <div className="mt-6 flex-shrink-0">
+            {edu.link ? (
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full glass-hover"
+                asChild
+              >
+                <a href={edu.link} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View Certificate
+                </a>
+              </Button>
+            ) : (
+              <div className="h-[38px]" />
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</TooltipProvider>
 
   </div>
 </section>
