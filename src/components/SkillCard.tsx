@@ -20,7 +20,7 @@ const getCategoryColor = (category: string) => {
 
 export default function SkillCard({ name, icon, level, category }: SkillCardProps) {
   return (
-    <div className="group glass-hover rounded-xl p-6 hover-lift hover-tilt transition-all duration-300">
+    <div className="group glass-hover border-glow rounded-xl p-6 hover-lift hover-tilt transition-all duration-300">
       {/* Icon */}
       <div className="relative mb-4">
         <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${getCategoryColor(category)} p-3 group-hover:glow transition-all duration-300`}>

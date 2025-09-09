@@ -124,13 +124,13 @@ export default function Portfolio() {
               
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="glass rounded-lg p-4">
+                <div className="glass border-glow rounded-lg p-4">
                   <div className="text-2xl font-bold gradient-text">
                     {personalInfo.yearsOfExperience}+
                   </div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
-                <div className="glass rounded-lg p-4">
+                <div className="glass border-glow rounded-lg p-4">
                   <div className="text-2xl font-bold gradient-text">5+</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </div>
@@ -153,7 +153,7 @@ export default function Portfolio() {
 
             <div className="animate-on-scroll flex justify-center lg:justify-end">
               <div className="relative max-w-md">
-                <div className="glass rounded-2xl p-4 hover-lift">
+                <div className="glass border-glow rounded-2xl p-4 hover-lift">
                   <img
                     src={personalInfo.portrait}
                     alt="Developer portrait"
@@ -235,7 +235,7 @@ export default function Portfolio() {
 
           <div className="space-y-8 animate-on-scroll">
             {experience.map((exp, index) => (
-              <div key={index} className="glass rounded-2xl p-8 hover-lift">
+              <div key={index} className="glass border-glow rounded-2xl p-8 hover-lift">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
@@ -286,7 +286,7 @@ export default function Portfolio() {
       return (
         <div
           key={index}
-          className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
+          className="glass border-glow rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
         >
           {/* Top content */}
           <div className="flex-1">
