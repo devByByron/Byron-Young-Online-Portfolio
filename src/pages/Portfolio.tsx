@@ -152,20 +152,24 @@ export default function Portfolio() {
             </div>
 
             <div className="animate-on-scroll flex justify-center lg:justify-end">
-              <div className="relative max-w-sm">
-                <div className="glass rounded-2xl p-3 hover-lift">
+              <div className="relative max-w-md">
+                <div className="glass rounded-2xl p-4 hover-lift">
                   <img
                     src={personalInfo.portrait}
                     alt="Developer portrait"
-                    className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-cover rounded-xl shadow-lg"
+                    className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-xl shadow-xl"
                     loading="lazy"
                   />
                 </div>
                 {/* Floating elements */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/20 rounded-full animate-float" />
-                <div className="absolute -bottom-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 bg-accent/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+                <div
+                  className="absolute -bottom-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 bg-accent/20 rounded-full animate-float"
+                  style={{ animationDelay: '1s' }}
+                />
               </div>
             </div>
+
           </div>
         </div>
       </section>

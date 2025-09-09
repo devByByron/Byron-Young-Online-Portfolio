@@ -82,7 +82,7 @@ export default function Navigation() {
                   className={`px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-200 hover:glass-hover ${
                     activeSection === item.href.substring(1)
                       ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground'
+                      : 'hover:text-foreground'
                   }`}
                 >
                   {item.name}
