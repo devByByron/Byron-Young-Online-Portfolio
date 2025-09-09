@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Twitter, Download, Code, Briefcase, GraduationCap } from 'lucide-react';
+import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Twitter, Download, Code, Briefcase, GraduationCap, FileBadge2 } from 'lucide-react';
 
 import Navigation from '@/components/Navigation';
 import ThreeScene from '@/components/ThreeScene';
@@ -47,8 +47,8 @@ export default function Portfolio() {
         </div>
         
         {/* Space Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80" />
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-background/90" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-background/90" /> */}
         
         {/* Content */}
         <div className="container relative z-10 px-4 lg:px-8 text-center">
@@ -130,7 +130,7 @@ export default function Portfolio() {
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="glass rounded-lg p-4">
-                  <div className="text-2xl font-bold gradient-text">50+</div>
+                  <div className="text-2xl font-bold gradient-text">5+</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function Portfolio() {
                   <img
                     src={personalInfo.portrait}
                     alt="Developer portrait"
-                    className="w-full rounded-xl"
+                    className="w-full w-48 rounded-xl"
                     loading="lazy"
                   />
                 </div>
@@ -236,8 +236,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-20 lg:py-32 bg-muted/20">
+    {/* Education Section */}
+    <section id="education" className="py-20 lg:py-32 bg-muted/20">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
             <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
@@ -249,33 +249,53 @@ export default function Portfolio() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
-            {education.map((edu, index) => (
-              <div key={index} className="glass rounded-2xl p-6 hover-lift">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="h-6 w-6 text-primary" />
-                  </div>
-                  <Badge variant="outline" className="bg-secondary/50 border-secondary">
-                    {edu.year}
-                  </Badge>
-                </div>
-                <h3 className="font-bold text-foreground mb-2">{edu.degree}</h3>
-                <p className="text-primary font-semibold mb-3">{edu.institution}</p>
-                <p className="text-sm text-muted-foreground mb-4">{edu.details}</p>
-                {edu.link && (
-                  <Button variant="outline" size="sm" className="w-full glass-hover" asChild>
-                    <a href={edu.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Certificate
-                    </a>
-                  </Button>
-                )}
-              </div>
-            ))}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
+  {education.map((edu, index) => (
+    <div
+      key={index}
+      className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between"
+    >
+      {/* Top content */}
+      <div>
+        <div className="flex items-start justify-between mb-4">
+          <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+            {edu.link ? (
+              <FileBadge2 className="h-6 w-6 text-primary" />
+            ) : (
+              <GraduationCap className="h-6 w-6 text-primary" />
+            )}
           </div>
+          <Badge variant="outline" className="bg-secondary/50 border-secondary">
+            {edu.year}
+          </Badge>
         </div>
-      </section>
+        <h3 className="font-bold text-foreground mb-2">{edu.degree}</h3>
+        <p className="text-primary font-semibold mb-3">{edu.institution}</p>
+        <p className="text-sm text-muted-foreground">{edu.details}</p>
+      </div>
+
+      {/* Bottom button (aligned) */}
+      {edu.link ? (
+        <Button
+          variant="outline"
+          size="sm"
+          className="w-full glass-hover mt-6"
+          asChild
+        >
+          <a href={edu.link} target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4 mr-2" />
+            View Certificate
+          </a>
+        </Button>
+      ) : (
+        <div className="mt-6 h-[38px]" /> 
+      )}
+    </div>
+  ))}
+</div>
+
+  </div>
+</section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 lg:py-32">
@@ -353,18 +373,7 @@ export default function Portfolio() {
                         <div className="text-sm text-muted-foreground">Professional network</div>
                       </div>
                     </a>
-                    <a
-                      href={personalInfo.socialLinks.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center p-4 glass-hover rounded-lg hover-lift group"
-                    >
-                      <Twitter className="h-6 w-6 mr-4 text-primary group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold">Twitter</div>
-                        <div className="text-sm text-muted-foreground">Follow my journey</div>
-                      </div>
-                    </a>
+                 
                     <a
                       href={personalInfo.socialLinks.email}
                       className="flex items-center p-4 glass-hover rounded-lg hover-lift group"
@@ -388,9 +397,9 @@ export default function Portfolio() {
         <div className="container px-4 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <div className="text-xl font-bold gradient-text">&lt;Dev/&gt;</div>
+              <div className="text-xl font-bold gradient-text">&lt;Byron Young&gt;</div>
               <p className="text-muted-foreground">
-                © 2024 {personalInfo.name}. All rights reserved.
+                © 2025 {personalInfo.name}. All rights reserved.
               </p>
             </div>
             <div className="flex items-center space-x-4">
@@ -410,14 +419,7 @@ export default function Portfolio() {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a
-                href={personalInfo.socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
+          
             </div>
           </div>
         </div>

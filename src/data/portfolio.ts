@@ -2,106 +2,147 @@
 import projectEcommerce from '@/assets/project-ecommerce.jpg';
 import projectDashboard from '@/assets/project-dashboard.jpg';
 import projectWeather from '@/assets/project-weather.jpg';
-import developerPortrait from '@/assets/developer-portrait.jpg';
+import developerPortrait from '@/assets/my-portrait.png';
 
 export const personalInfo = {
   name: "Byron Young",
-  title: "Digital Associate",
+  title: "Software Developer",
   tagline: "Building exceptional digital experiences with modern web technologies",
-  email: "byron@young.com",
-  location: "San Francisco, CA",
-  yearsOfExperience: 5,
-  bio: "Passionate full-stack developer with 5+ years of experience creating scalable web applications. I specialize in React, TypeScript, and Node.js, with a keen eye for modern UI/UX design. I love turning complex problems into simple, beautiful solutions.",
+  email: "youngbk0308@gmail.com",
+  location: "South Africa, Cape Town, ZA",
+  yearsOfExperience: 2,
+  bio: "“I’m a software developer who enjoys building user-friendly websites and applications. With hands-on experience in HTML, React, Tailwind CSS and TypeScript, I focus on creating clean, functional, and modern solutions. I’m passionate about learning new technologies and continuously improving my skills to deliver high-quality work.",
   portrait: developerPortrait,
   socialLinks: {
-    github: "https://github.com/byronyoung",
-    linkedin: "https://linkedin.com/in/byronyoung", 
-    twitter: "https://twitter.com/byronyoung",
-    email: "mailto:byron@young.com"
+    github: "https://github.com/devByByron",
+    linkedin: "http://www.linkedin.com/in/byron-young94", 
+    email: "mailto:youngbk0308@gmail.com"
   }
 };
 
 export const skills = [
   // Frontend
-  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: 5, category: "Frontend" as const },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", level: 5, category: "Frontend" as const },
-  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", level: 4, category: "Frontend" as const },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", level: 5, category: "Frontend" as const },
-  { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", level: 3, category: "Frontend" as const },
-  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 5, category: "Frontend" as const },
+  { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: 4, category: "Frontend" as const },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", level: 3, category: "Frontend" as const },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 4, category: "Frontend" as const },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: 3, category: "Frontend" as const },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", level: 3, category: "Frontend" as const },
   
   // Backend
-  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", level: 4, category: "Backend" as const },
-  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", level: 4, category: "Backend" as const },
-  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", level: 4, category: "Backend" as const },
-  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: 3, category: "Backend" as const },
-  { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", level: 4, category: "Backend" as const },
-  { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg", level: 3, category: "Backend" as const },
-  
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", level: 3, category: "Backend" as const },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", level: 3, category: "Backend" as const },
+
   // Tools
-  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", level: 5, category: "Tools" as const },
-  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", level: 3, category: "Tools" as const },
-  { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg", level: 3, category: "Tools" as const },
-  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", level: 4, category: "Design" as const }
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", level: 4, category: "Tools" as const },
+  { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", level: 5, category: "Tools" as const },
+  { name: "Visual Studio", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg", level: 5, category: "Tools" as const },
+  { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 5, category: "Tools" as const },
+
+
+  // Database
+  { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/sqlserver-original.svg", level: 4, category: "Database" as const },
+  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: 3, category: "Database" as const },
+
+  //Design
+  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", level: 3, category: "Design" as const }
 ];
 
 export const experience = [
   {
-    role: "Senior Full-Stack Developer",
-    company: "TechCorp Inc.",
-    duration: "2022 - Present",
-    description: "Lead development of scalable web applications using React, TypeScript, and Node.js. Mentored junior developers and implemented CI/CD pipelines.",
+    role: "Digital Associate",
+    company: "Capaciti",
+    duration: "Jul 2025 – Present",
+    location: "Salt River, WC",
+    description: "Contributing to the development of responsive and functional web applications while collaborating with design and product teams.",
     achievements: [
-      "Improved application performance by 40%",
-      "Led team of 4 developers on major product redesign",
-      "Implemented automated testing reducing bugs by 60%"
+      "Wrote and debugged code in Python, JavaScript, and HTML/CSS",
+      "Built and deployed responsive web apps to hosting platforms",
+      "Tested and troubleshot application bugs to ensure stability",
+      "Used Git and GitHub for version control",
+      "Participated in agile/scrum sessions and code reviews"
     ]
   },
   {
-    role: "Frontend Developer",
-    company: "StartupXYZ",
-    duration: "2020 - 2022",
-    description: "Developed responsive web applications and collaborated with design team to create intuitive user interfaces.",
+    role: "Work Integrated Learning Student",
+    company: "Cape Peninsula University of Technology",
+    duration: "Jul 2023 – Dec 2023",
+    location: "Bellville, WC",
+    description: "Worked on building a prototype web application and enhancing collaboration practices through version control.",
     achievements: [
-      "Built component library used across 5 products",
-      "Optimized bundle size reducing load time by 50%",
-      "Implemented accessibility standards achieving WCAG AA compliance"
+      "Developed a prototype Virtual Machine request web application using Joomla frontend",
+      "Collaborated with team members using GitHub to improve workflow and project organization"
     ]
   },
   {
-    role: "Junior Developer",
-    company: "WebSolutions Ltd.",
-    duration: "2019 - 2020",
-    description: "Gained experience in full-stack development while working on client projects and internal tools.",
+    role: "Intern Developer",
+    company: "University of Western Cape",
+    duration: "May 2018 – May 2019",
+    location: "Bellville, WC",
+    description: "Assisted in application development and data integration processes using Microsoft technologies.",
     achievements: [
-      "Contributed to 10+ client projects",
-      "Learned modern web development practices",
-      "Received 'Rising Star' award for quick learning"
+      "Designed and implemented ETL processes with SQL Server Integration Services (SSIS)",
+      "Focused on data extraction, transformation, and loading (ETL) operations",
+      "Contributed to documentation and quality assurance"
+    ]
+  },
+  {
+    role: "Intern Web Developer",
+    company: "Web 2 Web",
+    duration: "May 2017 – Nov 2017",
+    location: "Century City, WC",
+    description: "Supported development of client websites and optimized user experiences.",
+    achievements: [
+      "Developed responsive websites tailored to client requirements",
+      "Managed and updated website content for consistency and freshness",
+      "Applied SEO best practices to improve visibility and search rankings"
     ]
   }
 ];
 
+
 export const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
-    year: "2019",
-    details: "Graduated Magna Cum Laude, focused on software engineering and web technologies"
-  },
-  {
-    degree: "AWS Certified Solutions Architect",
-    institution: "Amazon Web Services",
+    degree: "DPICTADIP: ICT in Applications Development",
+    institution: "Cape Peninsula University of Technology",
     year: "2023",
-    details: "Professional certification in cloud architecture and deployment",
-    link: "https://aws.amazon.com/certification/"
+    details: "Completed a diploma focused on applications development, where I built a solid foundation in programming, databases, and web technologies. I worked on hands-on projects that involved creating responsive applications, collaborating with teams using GitHub, and applying software engineering principles to real-world challenges."
   },
   {
-    degree: "Meta Frontend Developer Certificate",
-    institution: "Meta (Facebook)",
-    year: "2022",
-    details: "Comprehensive program covering React, JavaScript, and modern frontend practices",
-    link: "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+    degree: "AI For Everyone by DeepLearning.AI",
+    institution: "DeepLearning.AI",
+    year: "2025",
+    details: "An introductory course on AI concepts, applications, and societal impact. Focused on understanding how AI is used in business, key opportunities and limitations, and how to work effectively with AI teams.",
+    link: "https://www.coursera.org/account/accomplishments/verify/X4T1C5BLDE03"
+  },
+  {
+    degree: "Introduction to Artificial Intelligence (AI)",
+    institution: "IBM",
+    year: "2025",
+    details: "Learned the fundamentals of AI, including its history, applications, key concepts, and real-world use cases across industries.",
+    link: "https://www.coursera.org/account/accomplishments/verify/2P3S3FTSZDFO"
+  },
+  {
+    degree: "AI Essentials",
+    institution: "Intel",
+    year: "2025",
+    details: "Gained foundational knowledge of AI concepts, tools, and applications, with a focus on how AI is shaping industries and everyday life.",
+    link: "https://www.coursera.org/account/accomplishments/verify/66MKQKN8NW1Y"
+  },
+  {
+    degree: "Generative AI with Large Language Models",
+    institution: "AWS | Deep Learning.AI",
+    year: "2025",
+    details: "Gained foundational knowledge of AI concepts, tools, and applications, with a focus on how AI is shaping industries and everyday life.",
+    link: "https://www.coursera.org/account/accomplishments/verify/6JSY1CC13SPP"
+  },
+  {
+    degree: "AI Foundations: Prompt Engineering with ChatGPT",
+    institution: "Arizona State University",
+    year: "2025",
+    details: "Learned the principles of prompt engineering to effectively interact with large language models like ChatGPT, focusing on crafting clear instructions and practical AI-driven solutions.",
+    link: "https://www.coursera.org/account/accomplishments/verify/7EBXSIZOVNDO"
   }
+
 ];
 
 export const projects = [
@@ -131,20 +172,5 @@ export const projects = [
     githubUrl: "https://github.com/alexdeveloper/weather-app",
     liveUrl: "https://weather-demo.netlify.app",
     featured: false
-  }
-];
-
-export const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Product Manager at TechCorp",
-    content: "Alex is an exceptional developer who consistently delivers high-quality solutions. His attention to detail and ability to understand complex requirements make him invaluable to any team.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616c28ca3d5?w=150&h=150&fit=crop&crop=face"
-  },
-  {
-    name: "Mike Chen",
-    role: "CEO at StartupXYZ",
-    content: "Working with Alex was a game-changer for our startup. He not only built our platform but also provided valuable insights on user experience and scalability.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
   }
 ];

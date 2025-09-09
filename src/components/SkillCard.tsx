@@ -1,8 +1,10 @@
+import { Database } from "lucide-react";
+
 interface SkillCardProps {
   name: string;
   icon: string;
   level: number; // 1-5 scale
-  category: 'Frontend' | 'Backend' | 'Tools' | 'Design';
+  category: 'Frontend' | 'Backend' | 'Tools' | 'Design' | 'Database';
 }
 
 const getCategoryColor = (category: string) => {
@@ -11,6 +13,7 @@ const getCategoryColor = (category: string) => {
     Backend: 'from-green-500 to-emerald-500',
     Tools: 'from-orange-500 to-red-500',
     Design: 'from-purple-500 to-pink-500',
+    Database: 'from-yellow-500 to-amber-500',
   };
   return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
 };
