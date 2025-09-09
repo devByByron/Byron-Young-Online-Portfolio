@@ -22,7 +22,7 @@ export default function ProjectCard({
   featured = false
 }: ProjectCardProps) {
   return (
-    <div className={`group glass-hover border-glow rounded-2xl overflow-hidden hover-lift hover-tilt ${
+    <div className={`group glass-hover rounded-2xl overflow-hidden hover-lift hover-tilt ${
       featured ? 'lg:col-span-2 glow' : ''
     }`}>
       {/* Image Container */}
