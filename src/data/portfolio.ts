@@ -2,6 +2,7 @@
 import aiConceptChatbot from '@/assets/ai-concept-chatbot.png';
 import customContentGenerator from '@/assets/custom-content-generator.jpg';
 import aiAccessibilityTool from '@/assets/ai-accessiblility-tool.jpg';
+import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import developerPortrait from '@/assets/my-portrait.png';
 
 export const personalInfo = {
@@ -174,11 +175,11 @@ export const projects = [
     featured: true
   },
   {
-    title: "Weather Forecast App",
-    description: "Beautiful weather application with 7-day forecasts, location-based weather, and interactive maps. Progressive Web App with offline support.",
-    image: aiAccessibilityTool,
-    technologies: ["Vue.js", "PWA", "Chart.js", "OpenWeather API", "Workbox"],
-    githubUrl: "https://github.com/devByByron/read-easy",
+    title: "AI Resume Builder",
+    description: "A web application that helps users create and customize their resumes using AI-driven templates and suggestions.",
+    image: aiResumeBuilder,
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui","Framer Motion"],
+    //githubUrl: "https://github.com/devByByron/read-easy",
     liveUrl: "https://app--resume-ai-99f76d15.base44.app/",
     featured: true
   }
