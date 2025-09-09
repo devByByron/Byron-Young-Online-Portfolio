@@ -9,13 +9,13 @@ interface SkillCardProps {
 
 const getCategoryColor = (category: string) => {
   const colors = {
-    Frontend: 'from-blue-500 to-cyan-500',
-    Backend: 'from-green-500 to-emerald-500',
-    Tools: 'from-orange-500 to-red-500',
-    Design: 'from-purple-500 to-pink-500',
-    Database: 'from-yellow-500 to-amber-500',
+    Frontend: 'from-blue-400 to-blue-600',
+    Backend: 'from-green-400 to-green-600', 
+    Tools: 'from-orange-400 to-orange-600',
+    Design: 'from-purple-400 to-purple-600',
+    Database: 'from-yellow-400 to-yellow-600',
   };
-  return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
+  return colors[category as keyof typeof colors] || 'from-gray-400 to-gray-600';
 };
 
 export default function SkillCard({ name, icon, level, category }: SkillCardProps) {

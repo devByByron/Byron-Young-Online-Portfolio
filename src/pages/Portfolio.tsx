@@ -190,10 +190,30 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-on-scroll">
-            {skills.map((skill, index) => (
-              <div key={skill.name} style={{ animationDelay: `${index * 0.1}s` }}>
-                <SkillCard {...skill} />
+          <div className="space-y-12 animate-on-scroll">
+            {Object.entries(
+              skills.reduce((acc, skill) => {
+                if (!acc[skill.category]) {
+                  acc[skill.category] = [];
+                }
+                acc[skill.category].push(skill);
+                return acc;
+              }, {} as Record<string, typeof skills>)
+            ).map(([category, categorySkills]) => (
+              <div key={category} className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl lg:text-2xl font-bold text-foreground">
+                    {category}
+                  </h3>
+                  <div className="flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent" />
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                  {categorySkills.map((skill, index) => (
+                    <div key={skill.name} style={{ animationDelay: `${index * 0.1}s` }}>
+                      <SkillCard {...skill} />
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
