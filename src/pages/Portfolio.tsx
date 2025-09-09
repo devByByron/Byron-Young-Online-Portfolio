@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Twitter, Download, Code, Briefcase, GraduationCap, FileBadge2 } from 'lucide-react';
+import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Download, Code, Briefcase, GraduationCap, FileBadge2 } from 'lucide-react';
 
 import Navigation from '@/components/Navigation';
 import ThreeScene from '@/components/ThreeScene';
@@ -63,10 +63,10 @@ export default function Portfolio() {
                 {personalInfo.name.split(' ')[0]}
               </span>
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light">
+            <h2 className="text-xl md:text-2xl lg:text-3xl  mb-8 font-light">
               {personalInfo.title}
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
               {personalInfo.tagline}
             </p>
             

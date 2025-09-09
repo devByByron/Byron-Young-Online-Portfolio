@@ -1,7 +1,7 @@
 // Portfolio data - easily editable for content management
-import projectEcommerce from '@/assets/project-ecommerce.jpg';
-import projectDashboard from '@/assets/project-dashboard.jpg';
-import projectWeather from '@/assets/project-weather.jpg';
+import aiConceptChatbot from '@/assets/ai-concept-chatbot.png';
+import customContentGenerator from '@/assets/custom-content-generator.jpg';
+import aiAccessibilityTool from '@/assets/ai-accessiblility-tool.jpg';
 import developerPortrait from '@/assets/my-portrait.png';
 
 export const personalInfo = {
@@ -147,30 +147,39 @@ export const education = [
 
 export const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with advanced features like real-time inventory, payment processing, and admin dashboard. Built for scalability with microservices architecture.",
-    image: projectEcommerce,
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-    githubUrl: "https://github.com/alexdeveloper/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.vercel.app",
+    title: "AI Concept Chatbot",
+    description: "A concept chatbot that focuses only on Artificial Intelligence. It’s designed to answer AI-related questions in a simple, easy-to-understand way, making it useful for anyone curious about the field.",
+    image: aiConceptChatbot,
+    technologies: ["React", "TypeScript", "Tailwind CSS","Shadcn/ui","Vite", "Gemini 1.5 Flash API"],
+    githubUrl: "https://github.com/devByByron/ai-nexus-bot",
+    liveUrl: "https://ai-nexus-bot.netlify.app/",
     featured: true
   },
   {
-    title: "Project Management Dashboard",
-    description: "Intuitive project management tool with kanban boards, time tracking, and team collaboration features. Designed for remote teams.",
-    image: projectDashboard,
-    technologies: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth"],
-    githubUrl: "https://github.com/alexdeveloper/project-dashboard",
-    liveUrl: "https://dashboard-demo.vercel.app",
-    featured: false
+    title: "Custom Content Generator",
+    description: "A simple and powerful tool that lets you generate text, images, and code from your own prompts. Built with Gemini 1.5 Flash and Hugging Face Stable Diffusion for fast and creative results.",
+    image: customContentGenerator,
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Vite", "Gemini 1.5 Flash API", "Hugging Face Stable Diffusion"],
+    githubUrl: "https://github.com/devByByron/BYGen",
+    liveUrl: "https://bygen.netlify.app/",
+    featured: true
+  },
+  {
+    title: "AI Accessibility Tool",
+    description: "A web application that extracts text from uploaded PDFs or images and enhances accessibility with features such as text-to-speech, translation, summarization, and text simplification.",
+    image: aiAccessibilityTool,
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Vite", "Gemini 1.5 Flash API"],
+    githubUrl: "https://github.com/devByByron/read-easy",
+    liveUrl: "https://readeazy.netlify.app/",
+    featured: true
   },
   {
     title: "Weather Forecast App",
     description: "Beautiful weather application with 7-day forecasts, location-based weather, and interactive maps. Progressive Web App with offline support.",
-    image: projectWeather,
+    image: aiAccessibilityTool,
     technologies: ["Vue.js", "PWA", "Chart.js", "OpenWeather API", "Workbox"],
-    githubUrl: "https://github.com/alexdeveloper/weather-app",
-    liveUrl: "https://weather-demo.netlify.app",
-    featured: false
+    githubUrl: "https://github.com/devByByron/read-easy",
+    liveUrl: "https://app--resume-ai-99f76d15.base44.app/",
+    featured: true
   }
 ];
