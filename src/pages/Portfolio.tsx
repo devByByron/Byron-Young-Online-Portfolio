@@ -367,7 +367,7 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-on-scroll">
             {projects.map((project, index) => (
-              <div key={project.title} style={{ animationDelay: `${index * 0.2}s` }}>
+              <div key={project.title} style={{ animationDelay: `${index * 0.2}s` }} className="h-full">
                 <ProjectCard {...project} featured={true} />
               </div>
             ))}
