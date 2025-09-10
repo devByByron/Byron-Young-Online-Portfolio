@@ -28,15 +28,10 @@ export const skills = [
   // Frontend
   { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: 4, category: "Frontend" as const },
   { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", level: 3, category: "Frontend" as const },
-<<<<<<< HEAD
   { name: "JavaScript", icon: javaScriptIcon, level: 4, category: "Frontend" as const },
-=======
-  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 4, category: "Frontend" as const },
->>>>>>> 47d977691b4234cb9b17e6e2a986bf7b02bb276b
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: 3, category: "Frontend" as const },
   { name: "TypeScript", icon: typeScriptIcon, level: 3, category: "Frontend" as const },
 
-  
   // Backend
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", level: 3, category: "Backend" as const },
   { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", level: 3, category: "Backend" as const },
@@ -48,17 +43,12 @@ export const skills = [
   { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 5, category: "Tools" as const },
 
   // Database
-<<<<<<< HEAD
   { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg", level: 4, category: "Database" as const },
-=======
-  { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg", level: 4, category: "Database" as const },
->>>>>>> 47d977691b4234cb9b17e6e2a986bf7b02bb276b
   { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: 3, category: "Database" as const },
 
   // Design
   { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", level: 3, category: "Design" as const }
 ];
-
 
 export const experience = [
   {
@@ -112,7 +102,6 @@ export const experience = [
   }
 ];
 
-
 export const education = [
   {
     degree: "DPICTADIP: ICT in Applications Development",
@@ -155,7 +144,6 @@ export const education = [
     details: "Learned the principles of prompt engineering to effectively interact with large language models like ChatGPT, focusing on crafting clear instructions and practical AI-driven solutions.",
     link: "https://www.coursera.org/account/accomplishments/verify/7EBXSIZOVNDO"
   }
-
 ];
 
 export const projects = [
