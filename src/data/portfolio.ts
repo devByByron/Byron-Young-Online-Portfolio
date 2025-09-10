@@ -28,7 +28,11 @@ export const skills = [
   // Frontend
   { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: 4, category: "Frontend" as const },
   { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", level: 3, category: "Frontend" as const },
+<<<<<<< HEAD
   { name: "JavaScript", icon: javaScriptIcon, level: 4, category: "Frontend" as const },
+=======
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 4, category: "Frontend" as const },
+>>>>>>> 47d977691b4234cb9b17e6e2a986bf7b02bb276b
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: 3, category: "Frontend" as const },
   { name: "TypeScript", icon: typeScriptIcon, level: 3, category: "Frontend" as const },
 
@@ -44,7 +48,11 @@ export const skills = [
   { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 5, category: "Tools" as const },
 
   // Database
+<<<<<<< HEAD
   { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg", level: 4, category: "Database" as const },
+=======
+  { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg", level: 4, category: "Database" as const },
+>>>>>>> 47d977691b4234cb9b17e6e2a986bf7b02bb276b
   { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: 3, category: "Database" as const },
 
   // Design
