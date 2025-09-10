@@ -86,8 +86,8 @@ export default function Portfolio() {
                 className="glass-hover border-primary/20 hover:border-primary/40 px-8 py-6 text-lg"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/resume.pdf';
-                  link.download = 'Byron_Young_Resume.pdf';
+                  link.href = '/Resume-of-Byron-Young.pdf';
+                  link.download = 'Resume-of-Byron-Young.pdf';
                   link.click();
                 }}
               >

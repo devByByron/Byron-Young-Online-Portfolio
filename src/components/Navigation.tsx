@@ -49,13 +49,15 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
-  const downloadResume = () => {
-    // Create a mock PDF download - in real app, this would be your actual resume
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Add your resume file to public folder
-    link.download = 'Developer_Resume.pdf';
-    link.click();
-  };
+const downloadResume = () => {
+  const link = document.createElement('a');
+  link.href = '/Resume-of-Byron-Young.pdf'; // ✅ Correct path from public folder
+  link.download = 'Resume-of-Byron-Young.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
