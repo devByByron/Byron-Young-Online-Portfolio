@@ -5,6 +5,9 @@ import aiAccessibilityTool from '@/assets/ai-accessiblility-tool.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import developerPortrait from '@/assets/my-portrait.png';
 
+import javaScriptIcon from "../assets/javascript-new.png";
+import typeScriptIcon from "../assets/typeScript.png";
+
 export const personalInfo = {
   name: "Byron Young",
   title: "Software Developer",
@@ -24,10 +27,11 @@ export const personalInfo = {
 export const skills = [
   // Frontend
   { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: 4, category: "Frontend" as const },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", level: 3, category: "Frontend" as const },
-  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 4, category: "Frontend" as const },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", level: 3, category: "Frontend" as const },
+  { name: "JavaScript", icon: javaScriptIcon, level: 4, category: "Frontend" as const },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: 3, category: "Frontend" as const },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", level: 3, category: "Frontend" as const },
+  { name: "TypeScript", icon: typeScriptIcon, level: 3, category: "Frontend" as const },
+
   
   // Backend
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", level: 3, category: "Backend" as const },
@@ -39,14 +43,14 @@ export const skills = [
   { name: "Visual Studio", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg", level: 5, category: "Tools" as const },
   { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 5, category: "Tools" as const },
 
-
   // Database
-  { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/sqlserver-original.svg", level: 4, category: "Database" as const },
+  { name: "SQL Server", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg", level: 4, category: "Database" as const },
   { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: 3, category: "Database" as const },
 
-  //Design
+  // Design
   { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", level: 3, category: "Design" as const }
 ];
+
 
 export const experience = [
   {
