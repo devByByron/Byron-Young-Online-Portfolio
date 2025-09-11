@@ -180,7 +180,7 @@ export const projects = [
     image: aiResumeBuilder,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui","Framer Motion"],
     //githubUrl: "https://github.com/devByByron/read-easy",
-    liveUrl: "https://app--resume-ai-99f76d15.base44.app/",
+    liveUrl: "https://resume-ai-copy-e76e2e76.base44.app/",
     featured: true
   }
 ];
