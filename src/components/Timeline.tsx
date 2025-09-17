@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Briefcase, GraduationCap, ExternalLink, MapPin } from 'lucide-react';
 import TimelineBackground from './TimelineBackground';
-import { experience, education } from '@/data/portfolio';
+import { experience } from '@/data/portfolio';
 
 // Timeline item type
 interface TimelineItem {
@@ -21,33 +21,18 @@ interface TimelineItem {
   year: number; // For sorting
 }
 
-// Convert data to timeline format
-const timelineData: TimelineItem[] = [
-  // Convert experience data
-  ...experience.map((exp, index) => ({
-    id: `exp-${index}`,
-    type: 'experience' as const,
-    title: exp.role,
-    subtitle: exp.company,
-    date: exp.duration,
-    location: exp.location,
-    description: exp.description,
-    achievements: exp.achievements,
-    year: parseInt(exp.duration.split('–')[0]?.trim().split(' ')[1] || '2020') // Extract year for sorting
-  })),
-  
-  // Convert education data
-  ...education.map((edu, index) => ({
-    id: `edu-${index}`,
-    type: 'education' as const,
-    title: edu.degree,
-    subtitle: edu.institution,
-    date: edu.year,
-    description: edu.details,
-    link: edu.link,
-    year: parseInt(edu.year)
-  }))
-].sort((a, b) => b.year - a.year); // Sort by year, newest first
+// Convert experience data to timeline format  
+const timelineData: TimelineItem[] = experience.map((exp, index) => ({
+  id: `exp-${index}`,
+  type: 'experience' as const,
+  title: exp.role,
+  subtitle: exp.company,
+  date: exp.duration,
+  location: exp.location,
+  description: exp.description,
+  achievements: exp.achievements,
+  year: parseInt(exp.duration.split('–')[0]?.trim().split(' ')[1] || '2020') // Extract year for sorting
+})).sort((a, b) => b.year - a.year); // Sort by year, newest first
 
 // Individual timeline item component
 const TimelineItemComponent: React.FC<{ item: TimelineItem; index: number }> = ({ item, index }) => {
@@ -217,14 +202,14 @@ const Timeline: React.FC = () => {
           className="text-center mb-16 lg:mb-24"
         >
           <Badge variant="outline" className="mb-6 bg-white/5 border-white/20 text-primary backdrop-blur-sm">
-            <Calendar className="h-4 w-4 mr-2" />
-            Professional Journey
+            <Briefcase className="h-4 w-4 mr-2" />
+            Work Experience
           </Badge>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-            My <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">Timeline</span>
+            My <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">Professional Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A visual journey through my professional growth, education, and key milestones
+            A visual journey through my career growth and professional milestones
           </p>
         </motion.div>
 
