@@ -43,27 +43,58 @@ const TimelineItemComponent: React.FC<{ item: TimelineItem; index: number }> = (
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 }}
-      transition={{ 
-        duration: 0.8, 
-        delay: 0.2,
-        type: "spring",
-        stiffness: 100,
-        damping: 20
+      initial={{ opacity: 0, y: 80, scale: 0.8, rotateX: -15 }}
+      animate={isInView ? { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        rotateX: 0,
+        transition: {
+          duration: 0.8,
+          delay: index * 0.2,
+          ease: [0.25, 0.46, 0.45, 0.94]
+        }
+      } : { 
+        opacity: 0, 
+        y: 80, 
+        scale: 0.8, 
+        rotateX: -15 
       }}
-      className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} mb-16 lg:mb-24`}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        transition: {
+          duration: 0.8,
+          delay: index * 0.15,
+          ease: [0.25, 0.46, 0.45, 0.94]
+        }
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} mb-16 lg:mb-32`}
     >
       {/* Content Card */}
       <div className={`w-full lg:w-5/12 ${isLeft ? 'lg:pr-8' : 'lg:pl-8'}`}>
         <motion.div
-          whileHover={{ scale: 1.02, rotateY: 5 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="relative group"
+          whileHover={{ 
+            scale: 1.05, 
+            rotateY: isLeft ? 8 : -8,
+            z: 50,
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+          }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 300, 
+            damping: 25,
+            duration: 0.3
+          }}
+          className="relative group perspective-1000"
         >
           {/* Glassmorphism card with neon glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="relative bg-background/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-70 transition-all duration-700 transform group-hover:scale-110" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+          <div className="relative bg-background/85 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 shadow-2xl group-hover:border-primary/30 transition-all duration-500">
             {/* Header */}
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center space-x-3">
@@ -122,9 +153,22 @@ const TimelineItemComponent: React.FC<{ item: TimelineItem; index: number }> = (
                 {item.achievements.map((achievement, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ delay: 0.5 + i * 0.1 }}
+                    initial={{ opacity: 0, x: -30, scale: 0.8 }}
+                    animate={isInView ? { 
+                      opacity: 1, 
+                      x: 0, 
+                      scale: 1,
+                      transition: {
+                        delay: 0.6 + i * 0.1,
+                        duration: 0.5,
+                        ease: "easeOut"
+                      }
+                    } : { 
+                      opacity: 0, 
+                      x: -30, 
+                      scale: 0.8 
+                    }}
+                    whileHover={{ x: 5, scale: 1.02 }}
                     className="flex items-start text-sm"
                   >
                     <div className="w-1.5 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mt-2 mr-3 flex-shrink-0" />
@@ -205,8 +249,8 @@ const Timeline: React.FC = () => {
             <Briefcase className="h-4 w-4 mr-2" />
             Work Experience
           </Badge>
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-            My <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">Professional Journey</span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            My <span className="gradient-text">Professional Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A visual journey through my career growth and professional milestones
@@ -215,7 +259,7 @@ const Timeline: React.FC = () => {
 
         {/* Timeline Line - Desktop */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary opacity-30 hidden lg:block" 
-             style={{ height: `${timelineData.length * 200}px`, top: '300px' }} />
+             style={{ height: `${timelineData.length * 400}px`, top: '200px' }} />
 
         {/* Timeline Items */}
         <div className="relative">
