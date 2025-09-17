@@ -10,8 +10,9 @@ import ProjectCard from '@/components/ProjectCard';
 import SkillCard from '@/components/SkillCard';
 import ContactForm from '@/components/ContactForm';
 import ScrollToTop from '@/components/ScrollToTop';
+import Timeline from '@/components/Timeline';
 
-import { personalInfo, skills, experience, education, projects } from '@/data/portfolio';
+import { personalInfo, skills, projects } from '@/data/portfolio';
 
 export default function Portfolio() {
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -220,135 +221,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20 lg:py-32">
-        <div className="container px-4 lg:px-8">
-          <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
-              <Briefcase className="h-4 w-4 mr-2" />
-              Work Experience
-            </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              My <span className="gradient-text">Professional Journey</span>
-            </h2>
-          </div>
-
-          <div className="space-y-8 animate-on-scroll">
-            {experience.map((exp, index) => (
-              <div key={index} className="glass rounded-2xl p-8 hover-lift">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
-                    <p className="text-primary font-semibold">{exp.company}</p>
-                  </div>
-                  <Badge variant="outline" className="bg-secondary/50 border-secondary self-start lg:self-center mt-2 lg:mt-0">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    {exp.duration}
-                  </Badge>
-                </div>
-                <p className="text-muted-foreground mb-4">{exp.description}</p>
-                <ul className="space-y-2">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-start text-sm">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-    {/* Education Section */}
-    <section id="education" className="py-20 lg:py-32 bg-muted/20">
-        <div className="container px-4 lg:px-8">
-          <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
-              <GraduationCap className="h-4 w-4 mr-2" />
-              Education & Certifications
-            </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Continuous <span className="gradient-text">Learning</span>
-            </h2>
-          </div>
-
-<TooltipProvider>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
-    {education.map((edu, index) => {
-      const truncateText = (text: string, maxLength: number = 120) => {
-        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-      };
-
-      const isTextTruncated = edu.details.length > 120;
-
-      return (
-        <div
-          key={index}
-          className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
-        >
-          {/* Top content */}
-          <div className="flex-1">
-            <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                {edu.link ? (
-                  <FileBadge2 className="h-6 w-6 text-primary" />
-                ) : (
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                )}
-              </div>
-              <Badge variant="outline" className="bg-secondary/50 border-secondary flex-shrink-0">
-                {edu.year}
-              </Badge>
-            </div>
-            <h3 className="font-bold text-foreground mb-2 line-clamp-2">{edu.degree}</h3>
-            <p className="text-primary font-semibold mb-3 line-clamp-1">{edu.institution}</p>
-            
-            {isTextTruncated ? (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <p className="text-sm text-muted-foreground cursor-help leading-relaxed">
-                    {truncateText(edu.details)}
-                  </p>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="max-w-xs p-3 text-sm bg-popover border border-border shadow-lg">
-                  <p className="leading-relaxed">{edu.details}</p>
-                </TooltipContent>
-              </Tooltip>
-            ) : (
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {edu.details}
-              </p>
-            )}
-          </div>
-
-          {/* Bottom button (aligned) */}
-          <div className="mt-6 flex-shrink-0">
-            {edu.link ? (
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full glass-hover"
-                asChild
-              >
-                <a href={edu.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Certificate
-                </a>
-              </Button>
-            ) : (
-              <div className="h-[38px]" />
-            )}
-          </div>
-        </div>
-      );
-    })}
-  </div>
-</TooltipProvider>
-
-  </div>
-</section>
+      {/* Timeline Section - Professional Journey */}
+      <Timeline />
 
       {/* Projects Section */}
       <section id="projects" className="py-20 lg:py-32">
