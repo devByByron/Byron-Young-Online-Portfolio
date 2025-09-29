@@ -10,7 +10,7 @@ import typeScriptIcon from "../assets/typeScript.png";
 
 export const personalInfo = {
   name: "Byron Young",
-  title: "Software Developer",
+  title: "Aspiring Software Engineer",
   tagline: "Building exceptional digital experiences with modern web technologies",
   email: "youngbk0308@gmail.com",
   location: "South Africa, Cape Town, ZA",
