@@ -10,12 +10,12 @@ import typeScriptIcon from "../assets/typeScript.png";
 
 export const personalInfo = {
   name: "Byron Young",
-  title: "Aspiring Software Engineer",
+  title: "Software Developer Graduate",
   tagline: "Building exceptional digital experiences with modern web technologies",
   email: "youngbk0308@gmail.com",
   location: "South Africa, Cape Town, ZA",
   yearsOfExperience: 2,
-  bio: "“I’m a software developer who enjoys building user-friendly websites and applications. With hands-on experience in HTML, React, Tailwind CSS and TypeScript, I focus on creating clean, functional, and modern solutions. I’m passionate about learning new technologies and continuously improving my skills to deliver high-quality work.",
+  bio: "“I’m a software developer graduate who enjoys building user-friendly websites and applications. With hands-on experience in HTML, React, Tailwind CSS and TypeScript, I focus on creating clean, functional, and modern solutions. I’m passionate about learning new technologies and continuously improving my skills to deliver high-quality work.",
   portrait: developerPortrait,
   socialLinks: {
     github: "https://github.com/devByByron",
