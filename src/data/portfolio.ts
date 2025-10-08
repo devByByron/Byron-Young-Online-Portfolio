@@ -1,5 +1,5 @@
 // Portfolio data - easily editable for content management
-import aiConceptChatbot from '@/assets/ai-concept-chatbot.png';
+import aiConceptChatbot from '@/assets/AI-Nexus-Chatbot.png';
 import customContentGenerator from '@/assets/custom-content-generator.jpg';
 import aiAccessibilityTool from '@/assets/ai-accessiblility-tool.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
@@ -239,7 +239,7 @@ export const projects = [
       'Tailwind CSS',
       'Shadcn/ui',
       'Vite',
-      'Gemini 1.5 Flash API',
+      'Gemini 2.5 Flash API',
     ],
     githubUrl: 'https://github.com/devByByron/ai-nexus-bot',
     liveUrl: 'https://ai-nexus-bot.netlify.app/',
@@ -256,7 +256,7 @@ export const projects = [
       'Tailwind CSS',
       'Shadcn/ui',
       'Vite',
-      'Gemini 1.5 Flash API',
+      'Gemini 2.5 Flash API',
       'Hugging Face Stable Diffusion',
     ],
     githubUrl: 'https://github.com/devByByron/BYGen',
@@ -274,7 +274,7 @@ export const projects = [
       'Tailwind CSS',
       'Shadcn/ui',
       'Vite',
-      'Gemini 1.5 Flash API',
+      'Gemini 2.5 Flash API',
     ],
     githubUrl: 'https://github.com/devByByron/read-easy',
     liveUrl: 'https://readeazy.netlify.app/',
