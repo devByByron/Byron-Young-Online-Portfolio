@@ -1,7 +1,12 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface ProjectCardProps {
   title: string;
@@ -20,11 +25,13 @@ export default function ProjectCard({
   technologies,
   githubUrl,
   liveUrl,
-  featured = false
+  featured = false,
 }: ProjectCardProps) {
   const maxLength = 140;
   const truncateText = (text: string) => {
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+    return text.length > maxLength
+      ? text.substring(0, maxLength) + '...'
+      : text;
   };
   const isTextTruncated = description.length > maxLength;
 
@@ -40,7 +47,7 @@ export default function ProjectCard({
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           {/* Action buttons on hover */}
           <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
             {githubUrl && (
@@ -61,11 +68,7 @@ export default function ProjectCard({
               </Button>
             )}
             {liveUrl && (
-              <Button
-                size="sm"
-                className="bg-hero-gradient shadow-lg"
-                asChild
-              >
+              <Button size="sm" className="bg-hero-gradient shadow-lg" asChild>
                 <a
                   href={liveUrl}
                   target="_blank"
@@ -86,12 +89,15 @@ export default function ProjectCard({
               {title}
             </h3>
             {featured && (
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+              <Badge
+                variant="secondary"
+                className="bg-primary/10 text-primary border-primary/20"
+              >
                 Featured
               </Badge>
             )}
           </div>
-          
+
           {isTextTruncated ? (
             <Tooltip>
               <TooltipTrigger asChild>
@@ -99,7 +105,10 @@ export default function ProjectCard({
                   {truncateText(description)}
                 </p>
               </TooltipTrigger>
-              <TooltipContent side="top" className="max-w-sm p-3 text-sm bg-popover border border-border shadow-lg">
+              <TooltipContent
+                side="top"
+                className="max-w-sm p-3 text-sm bg-popover border border-border shadow-lg"
+              >
                 <p className="leading-relaxed">{description}</p>
               </TooltipContent>
             </Tooltip>
@@ -112,9 +121,9 @@ export default function ProjectCard({
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.map((tech, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
+              <Badge
+                key={index}
+                variant="outline"
                 className="text-xs bg-secondary/50 border-secondary hover:border-primary/40 transition-colors"
               >
                 {tech}
@@ -131,27 +140,15 @@ export default function ProjectCard({
                 className="flex-1 border-border hover:border-primary/40"
                 asChild
               >
-                <a
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4 mr-2" />
                   Code
                 </a>
               </Button>
             )}
             {liveUrl && (
-              <Button
-                size="sm"
-                className="flex-1 bg-hero-gradient"
-                asChild
-              >
-                <a
-                  href={liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <Button size="sm" className="flex-1 bg-hero-gradient" asChild>
+                <a href={liveUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Demo
                 </a>

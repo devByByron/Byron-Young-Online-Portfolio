@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Send, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Send, CheckCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,7 +20,7 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
@@ -33,9 +33,9 @@ export default function ContactForm() {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Validation Error",
-        description: "Please fill in all fields.",
-        variant: "destructive",
+        title: 'Validation Error',
+        description: 'Please fill in all fields.',
+        variant: 'destructive',
       });
       setIsSubmitting(false);
       return;
@@ -45,9 +45,9 @@ export default function ContactForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
+        title: 'Invalid Email',
+        description: 'Please enter a valid email address.',
+        variant: 'destructive',
       });
       setIsSubmitting(false);
       return;
@@ -55,7 +55,7 @@ export default function ContactForm() {
 
     try {
       // 👇 Send email using EmailJS
-     await emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
@@ -68,18 +68,18 @@ export default function ContactForm() {
 
       setIsSubmitted(true);
       toast({
-        title: "Message Sent!",
+        title: 'Message Sent!',
         description: "Thank you for your message. I'll get back to you soon!",
       });
 
       // Reset form
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error(error);
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
+        title: 'Error',
+        description: 'Something went wrong. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);

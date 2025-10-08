@@ -1,8 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Mail, MapPin, Calendar, ExternalLink, Github, Linkedin, Download, Code, Briefcase, GraduationCap, FileBadge2 } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import {
+  Mail,
+  MapPin,
+  Calendar,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Download,
+  Code,
+  Briefcase,
+  GraduationCap,
+  FileBadge2,
+} from 'lucide-react';
 
 import Navigation from '@/components/Navigation';
 import ThreeScene from '@/components/ThreeScene';
@@ -11,7 +28,13 @@ import SkillCard from '@/components/SkillCard';
 import ContactForm from '@/components/ContactForm';
 import ScrollToTop from '@/components/ScrollToTop';
 
-import { personalInfo, skills, experience, education, projects } from '@/data/portfolio';
+import {
+  personalInfo,
+  skills,
+  experience,
+  education,
+  projects,
+} from '@/data/portfolio';
 
 export default function Portfolio() {
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -19,8 +42,8 @@ export default function Portfolio() {
   useEffect(() => {
     // Intersection Observer for animations
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-up');
           }
@@ -31,7 +54,7 @@ export default function Portfolio() {
 
     // Observe all animatable elements
     const animateElements = document.querySelectorAll('.animate-on-scroll');
-    animateElements.forEach((el) => observer.observe(el));
+    animateElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -39,22 +62,28 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        id="hero"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         {/* Three.js Background */}
         <div className="absolute inset-0 opacity-80">
           <ThreeScene className="w-full h-full" />
         </div>
-        
+
         {/* Space Gradient Overlay */}
         {/* <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80" />
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/5 to-background/90" /> */}
-        
+
         {/* Content */}
         <div className="container relative z-10 px-4 lg:px-8 text-center">
           <div className="animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+            <Badge
+              variant="outline"
+              className="mb-6 glass-hover border-primary/20 text-primary"
+            >
               Available for hire
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -69,13 +98,17 @@ export default function Portfolio() {
             <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
               {personalInfo.tagline}
             </p>
-            
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
                 className="bg-hero-gradient hover:glow-strong transition-all duration-300 px-8 py-6 text-lg"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .getElementById('contact')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
@@ -111,7 +144,10 @@ export default function Portfolio() {
         <div className="container px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="animate-on-scroll">
-              <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+              <Badge
+                variant="outline"
+                className="mb-6 glass-hover border-primary/20 text-primary"
+              >
                 About Me
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -121,18 +157,22 @@ export default function Portfolio() {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 {personalInfo.bio}
               </p>
-              
+
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="glass rounded-lg p-4">
                   <div className="text-2xl font-bold gradient-text">
                     {personalInfo.yearsOfExperience}+
                   </div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <div className="text-sm text-muted-foreground">
+                    Years Experience
+                  </div>
                 </div>
                 <div className="glass rounded-lg p-4">
                   <div className="text-2xl font-bold gradient-text">5+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                  <div className="text-sm text-muted-foreground">
+                    Projects Completed
+                  </div>
                 </div>
               </div>
 
@@ -140,7 +180,10 @@ export default function Portfolio() {
               <div className="space-y-3">
                 <div className="flex items-center text-muted-foreground">
                   <Mail className="h-5 w-5 mr-3 text-primary" />
-                  <a href={`mailto:${personalInfo.email}`} className="hover:text-primary transition-colors">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="hover:text-primary transition-colors"
+                  >
                     {personalInfo.email}
                   </a>
                 </div>
@@ -169,7 +212,6 @@ export default function Portfolio() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -178,7 +220,10 @@ export default function Portfolio() {
       <section id="skills" className="py-20 lg:py-32 bg-muted/20">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+            <Badge
+              variant="outline"
+              className="mb-6 glass-hover border-primary/20 text-primary"
+            >
               <Code className="h-4 w-4 mr-2" />
               Skills & Technologies
             </Badge>
@@ -186,19 +231,23 @@ export default function Portfolio() {
               My <span className="gradient-text">Technical Arsenal</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I work with cutting-edge technologies to build scalable, performant applications
+              I work with cutting-edge technologies to build scalable,
+              performant applications
             </p>
           </div>
 
           <div className="space-y-12 animate-on-scroll">
             {Object.entries(
-              skills.reduce((acc, skill) => {
-                if (!acc[skill.category]) {
-                  acc[skill.category] = [];
-                }
-                acc[skill.category].push(skill);
-                return acc;
-              }, {} as Record<string, typeof skills>)
+              skills.reduce(
+                (acc, skill) => {
+                  if (!acc[skill.category]) {
+                    acc[skill.category] = [];
+                  }
+                  acc[skill.category].push(skill);
+                  return acc;
+                },
+                {} as Record<string, typeof skills>
+              )
             ).map(([category, categorySkills]) => (
               <div key={category} className="space-y-6">
                 <div className="flex items-center gap-3">
@@ -209,7 +258,10 @@ export default function Portfolio() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                   {categorySkills.map((skill, index) => (
-                    <div key={skill.name} style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div
+                      key={skill.name}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
                       <SkillCard {...skill} />
                     </div>
                   ))}
@@ -224,7 +276,10 @@ export default function Portfolio() {
       <section id="experience" className="py-20 lg:py-32">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+            <Badge
+              variant="outline"
+              className="mb-6 glass-hover border-primary/20 text-primary"
+            >
               <Briefcase className="h-4 w-4 mr-2" />
               Work Experience
             </Badge>
@@ -238,10 +293,15 @@ export default function Portfolio() {
               <div key={index} className="glass rounded-2xl p-8 hover-lift">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
+                    <h3 className="text-xl font-bold text-foreground">
+                      {exp.role}
+                    </h3>
                     <p className="text-primary font-semibold">{exp.company}</p>
                   </div>
-                  <Badge variant="outline" className="bg-secondary/50 border-secondary self-start lg:self-center mt-2 lg:mt-0">
+                  <Badge
+                    variant="outline"
+                    className="bg-secondary/50 border-secondary self-start lg:self-center mt-2 lg:mt-0"
+                  >
                     <Calendar className="h-4 w-4 mr-2" />
                     {exp.duration}
                   </Badge>
@@ -261,11 +321,14 @@ export default function Portfolio() {
         </div>
       </section>
 
-    {/* Education Section */}
-    <section id="education" className="py-20 lg:py-32 bg-muted/20">
+      {/* Education Section */}
+      <section id="education" className="py-20 lg:py-32 bg-muted/20">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+            <Badge
+              variant="outline"
+              className="mb-6 glass-hover border-primary/20 text-primary"
+            >
               <GraduationCap className="h-4 w-4 mr-2" />
               Education & Certifications
             </Badge>
@@ -274,100 +337,126 @@ export default function Portfolio() {
             </h2>
           </div>
 
-<TooltipProvider>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
-    {education.map((edu, index) => {
-      const truncateText = (text: string, maxLength: number = 120) => {
-        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-      };
+          <TooltipProvider>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
+              {education.map((edu, index) => {
+                const truncateText = (
+                  text: string,
+                  maxLength: number = 120
+                ) => {
+                  return text.length > maxLength
+                    ? text.substring(0, maxLength) + '...'
+                    : text;
+                };
 
-      const isTextTruncated = edu.details.length > 120;
+                const isTextTruncated = edu.details.length > 120;
 
-      return (
-        <div
-          key={index}
-          className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
-        >
-          {/* Top content */}
-          <div className="flex-1">
-            <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                {edu.link ? (
-                  <FileBadge2 className="h-6 w-6 text-primary" />
-                ) : (
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                )}
-              </div>
-              <Badge variant="outline" className="bg-secondary/50 border-secondary flex-shrink-0">
-                {edu.year}
-              </Badge>
+                return (
+                  <div
+                    key={index}
+                    className="glass rounded-2xl p-6 hover-lift h-full flex flex-col justify-between min-h-[280px]"
+                  >
+                    {/* Top content */}
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                          {edu.link ? (
+                            <FileBadge2 className="h-6 w-6 text-primary" />
+                          ) : (
+                            <GraduationCap className="h-6 w-6 text-primary" />
+                          )}
+                        </div>
+                        <Badge
+                          variant="outline"
+                          className="bg-secondary/50 border-secondary flex-shrink-0"
+                        >
+                          {edu.year}
+                        </Badge>
+                      </div>
+                      <h3 className="font-bold text-foreground mb-2 line-clamp-2">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-primary font-semibold mb-3 line-clamp-1">
+                        {edu.institution}
+                      </p>
+
+                      {isTextTruncated ? (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <p className="text-sm text-muted-foreground cursor-help leading-relaxed">
+                              {truncateText(edu.details)}
+                            </p>
+                          </TooltipTrigger>
+                          <TooltipContent
+                            side="top"
+                            className="max-w-xs p-3 text-sm bg-popover border border-border shadow-lg"
+                          >
+                            <p className="leading-relaxed">{edu.details}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      ) : (
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {edu.details}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Bottom button (aligned) */}
+                    <div className="mt-6 flex-shrink-0">
+                      {edu.link ? (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full glass-hover"
+                          asChild
+                        >
+                          <a
+                            href={edu.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            View Certificate
+                          </a>
+                        </Button>
+                      ) : (
+                        <div className="h-[38px]" />
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <h3 className="font-bold text-foreground mb-2 line-clamp-2">{edu.degree}</h3>
-            <p className="text-primary font-semibold mb-3 line-clamp-1">{edu.institution}</p>
-            
-            {isTextTruncated ? (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <p className="text-sm text-muted-foreground cursor-help leading-relaxed">
-                    {truncateText(edu.details)}
-                  </p>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="max-w-xs p-3 text-sm bg-popover border border-border shadow-lg">
-                  <p className="leading-relaxed">{edu.details}</p>
-                </TooltipContent>
-              </Tooltip>
-            ) : (
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {edu.details}
-              </p>
-            )}
-          </div>
-
-          {/* Bottom button (aligned) */}
-          <div className="mt-6 flex-shrink-0">
-            {edu.link ? (
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full glass-hover"
-                asChild
-              >
-                <a href={edu.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Certificate
-                </a>
-              </Button>
-            ) : (
-              <div className="h-[38px]" />
-            )}
-          </div>
+          </TooltipProvider>
         </div>
-      );
-    })}
-  </div>
-</TooltipProvider>
-
-  </div>
-</section>
+      </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 lg:py-32">
         <div className="container px-4 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+            <Badge
+              variant="outline"
+              className="mb-6 glass-hover border-primary/20 text-primary"
+            >
               Featured Work
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Recent <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and experience
+              Here are some of my recent projects that showcase my skills and
+              experience
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-on-scroll">
             {projects.map((project, index) => (
-              <div key={project.title} style={{ animationDelay: `${index * 0.2}s` }} className="h-full">
+              <div
+                key={project.title}
+                style={{ animationDelay: `${index * 0.2}s` }}
+                className="h-full"
+              >
                 <ProjectCard {...project} featured={true} />
               </div>
             ))}
@@ -380,16 +469,20 @@ export default function Portfolio() {
         <div className="container px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-on-scroll">
-              <Badge variant="outline" className="mb-6 glass-hover border-primary/20 text-primary">
+              <Badge
+                variant="outline"
+                className="mb-6 glass-hover border-primary/20 text-primary"
+              >
                 <Mail className="h-4 w-4 mr-2" />
                 Get In Touch
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Let's Build Something <span className="gradient-text">Amazing</span>
+                Let's Build Something{' '}
+                <span className="gradient-text">Amazing</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                I'm always interested in new opportunities and interesting projects. 
-                Let's discuss how we can work together.
+                I'm always interested in new opportunities and interesting
+                projects. Let's discuss how we can work together.
               </p>
             </div>
 
@@ -397,7 +490,7 @@ export default function Portfolio() {
               <div className="animate-on-scroll">
                 <ContactForm />
               </div>
-              
+
               <div className="animate-on-scroll space-y-8">
                 <div>
                   <h3 className="text-xl font-bold mb-6">Let's Connect</h3>
@@ -411,7 +504,9 @@ export default function Portfolio() {
                       <Github className="h-6 w-6 mr-4 text-primary group-hover:scale-110 transition-transform" />
                       <div>
                         <div className="font-semibold">GitHub</div>
-                        <div className="text-sm text-muted-foreground">View my code</div>
+                        <div className="text-sm text-muted-foreground">
+                          View my code
+                        </div>
                       </div>
                     </a>
                     <a
@@ -423,10 +518,12 @@ export default function Portfolio() {
                       <Linkedin className="h-6 w-6 mr-4 text-primary group-hover:scale-110 transition-transform" />
                       <div>
                         <div className="font-semibold">LinkedIn</div>
-                        <div className="text-sm text-muted-foreground">Professional network</div>
+                        <div className="text-sm text-muted-foreground">
+                          Professional network
+                        </div>
                       </div>
                     </a>
-                 
+
                     <a
                       href={personalInfo.socialLinks.email}
                       className="flex items-center p-4 glass-hover rounded-lg hover-lift group"
@@ -434,7 +531,9 @@ export default function Portfolio() {
                       <Mail className="h-6 w-6 mr-4 text-primary group-hover:scale-110 transition-transform" />
                       <div>
                         <div className="font-semibold">Email</div>
-                        <div className="text-sm text-muted-foreground">{personalInfo.email}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {personalInfo.email}
+                        </div>
                       </div>
                     </a>
                   </div>
@@ -450,7 +549,9 @@ export default function Portfolio() {
         <div className="container px-4 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <div className="text-xl font-bold gradient-text">&lt;Byron Young&gt;</div>
+              <div className="text-xl font-bold gradient-text">
+                &lt;Byron Young&gt;
+              </div>
               <p className="text-muted-foreground">
                 © 2025 {personalInfo.name}. All rights reserved.
               </p>
@@ -472,7 +573,6 @@ export default function Portfolio() {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-          
             </div>
           </div>
         </div>

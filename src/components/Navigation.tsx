@@ -20,7 +20,7 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.substring(1));
       const current = sections.find(section => {
@@ -31,7 +31,7 @@ export default function Navigation() {
         }
         return false;
       });
-      
+
       if (current) {
         setActiveSection(current);
       }
@@ -49,20 +49,21 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
-const downloadResume = () => {
-  const link = document.createElement('a');
-  link.href = '/Resume-of-Byron-Young.pdf'; // ✅ Correct path from public folder
-  link.download = 'Resume-of-Byron-Young.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Resume-of-Byron-Young.pdf'; // ✅ Correct path from public folder
+    link.download = 'Resume-of-Byron-Young.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass backdrop-blur-xl' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'glass backdrop-blur-xl' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -78,7 +79,7 @@ const downloadResume = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-1 lg:space-x-2">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
@@ -122,7 +123,11 @@ const downloadResume = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground hover:text-primary"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -131,7 +136,7 @@ const downloadResume = () => {
         {isOpen && (
           <div className="md:hidden glass rounded-lg mt-2 p-4 animate-fade-up">
             <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}

@@ -1,4 +1,4 @@
-import { Database } from "lucide-react";
+import { Database } from 'lucide-react';
 
 interface SkillCardProps {
   name: string;
@@ -10,7 +10,7 @@ interface SkillCardProps {
 const getCategoryColor = (category: string) => {
   const colors = {
     Frontend: 'from-blue-400 to-blue-600',
-    Backend: 'from-green-400 to-green-600', 
+    Backend: 'from-green-400 to-green-600',
     Tools: 'from-orange-400 to-orange-600',
     Design: 'from-purple-400 to-purple-600',
     Database: 'from-yellow-400 to-yellow-600',
@@ -18,12 +18,19 @@ const getCategoryColor = (category: string) => {
   return colors[category as keyof typeof colors] || 'from-gray-400 to-gray-600';
 };
 
-export default function SkillCard({ name, icon, level, category }: SkillCardProps) {
+export default function SkillCard({
+  name,
+  icon,
+  level,
+  category,
+}: SkillCardProps) {
   return (
     <div className="group glass-hover rounded-xl p-6 hover-lift hover-tilt transition-all duration-300">
       {/* Icon */}
       <div className="relative mb-4">
-        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${getCategoryColor(category)} p-3 group-hover:glow transition-all duration-300`}>
+        <div
+          className={`w-12 h-12 rounded-lg bg-gradient-to-br ${getCategoryColor(category)} p-3 group-hover:glow transition-all duration-300`}
+        >
           <img
             src={icon}
             alt={`${name} icon`}
@@ -49,7 +56,9 @@ export default function SkillCard({ name, icon, level, category }: SkillCardProp
         <div className="space-y-2">
           <div className="flex justify-between items-center">
             <span className="text-xs text-muted-foreground">Proficiency</span>
-            <span className="text-xs font-medium text-foreground">{level}/5</span>
+            <span className="text-xs font-medium text-foreground">
+              {level}/5
+            </span>
           </div>
           <div className="w-full bg-secondary rounded-full h-1.5 overflow-hidden">
             <div

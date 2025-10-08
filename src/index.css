@@ -38,12 +38,16 @@
     --radius: 1rem;
 
     /* Portfolio specific tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(237 100% 70%) 0%, hsl(260 100% 75%) 100%);
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(237 100% 70%) 0%,
+      hsl(260 100% 75%) 100%
+    );
     --hero-glow: 237 100% 70%;
     --glass-bg: 220 24% 12% / 0.7;
     --glass-border: 220 20% 25% / 0.3;
     --glass-shadow: 0 8px 32px hsl(220 26% 7% / 0.3);
-    
+
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -77,7 +81,9 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
   /* Smooth scroll behavior */
@@ -168,13 +174,22 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 20px hsl(var(--hero-glow) / 0.3); }
-  100% { box-shadow: 0 0 40px hsl(var(--hero-glow) / 0.6); }
+  0% {
+    box-shadow: 0 0 20px hsl(var(--hero-glow) / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 40px hsl(var(--hero-glow) / 0.6);
+  }
 }
 
 @keyframes fade-up {
