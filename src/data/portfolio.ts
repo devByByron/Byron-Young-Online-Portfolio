@@ -239,7 +239,7 @@ export const projects = [
       'Tailwind CSS',
       'Shadcn/ui',
       'Vite',
-      'Gemini 2.5 Flash API',
+      'Gemini 2.0 Flash API',
     ],
     githubUrl: 'https://github.com/devByByron/ai-nexus-bot',
     liveUrl: 'https://ai-nexus-bot.netlify.app/',
