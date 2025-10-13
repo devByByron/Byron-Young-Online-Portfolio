@@ -51,7 +51,7 @@ export default function Navigation() {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Resume-of-Byron-Young.pdf'; // ✅ Correct path from public folder
+    link.href = '/Resume-of-Byron-Young.pdf';
     link.download = 'Resume-of-Byron-Young.pdf';
     document.body.appendChild(link);
     link.click();

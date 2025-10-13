@@ -100,7 +100,7 @@ export const skills = [
 
   // Database
   {
-    name: 'SQL Server',
+    name: 'MS SQL Server',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
     level: 4,
     category: 'Database' as const,
