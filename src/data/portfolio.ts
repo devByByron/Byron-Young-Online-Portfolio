@@ -108,7 +108,7 @@ export const skills = [
   {
     name: 'MongoDB',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    level: 3,
+    level: 4,
     category: 'Database' as const,
   },
 
