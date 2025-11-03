@@ -4,7 +4,7 @@ import customContentGenerator from '@/assets/custom-content-generator.jpg';
 import aiAccessibilityTool from '@/assets/ai-accessiblility-tool.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import developerPortrait from '@/assets/my-portrait.png';
-
+import ngoPortfolioWebsite from '@/assets/NGO-Portfolio-Cover.png';
 import javaScriptIcon from '../assets/javascript-new.png';
 import typeScriptIcon from '../assets/typeScript.png';
 
@@ -263,21 +263,38 @@ export const projects = [
     liveUrl: 'https://bygen.netlify.app/',
     featured: true,
   },
+  // {
+  //   title: 'AI Accessibility Tool',
+  //   description:
+  //     'A web application that extracts text from uploaded PDFs or images and enhances accessibility with features such as text-to-speech, translation, summarization, and text simplification.',
+  //   image: aiAccessibilityTool,
+  //   technologies: [
+  //     'React',
+  //     'TypeScript',
+  //     'Tailwind CSS',
+  //     'Shadcn/ui',
+  //     'Vite',
+  //     'Gemini 2.5 Flash API',
+  //   ],
+  //   githubUrl: 'https://github.com/devByByron/read-easy',
+  //   liveUrl: 'https://readeazy.netlify.app/',
+  //   featured: true,
+  // },
   {
-    title: 'AI Accessibility Tool',
+    title: 'NGO/Community Portfolio Website',
     description:
-      'A web application that extracts text from uploaded PDFs or images and enhances accessibility with features such as text-to-speech, translation, summarization, and text simplification.',
-    image: aiAccessibilityTool,
+      'A web application that showcases the projects and initiatives of a non-profit organization or community group, featuring a user-friendly interface and easy navigation.',
+    image: ngoPortfolioWebsite,
     technologies: [
       'React',
       'TypeScript',
       'Tailwind CSS',
       'Shadcn/ui',
       'Vite',
-      'Gemini 2.5 Flash API',
+      'EmailJS',
     ],
-    githubUrl: 'https://github.com/devByByron/read-easy',
-    liveUrl: 'https://readeazy.netlify.app/',
+    githubUrl: 'https://github.com/isozyn/GetItDone',
+    liveUrl: 'https://a1getitdone.netlify.app/',
     featured: true,
   },
   {
