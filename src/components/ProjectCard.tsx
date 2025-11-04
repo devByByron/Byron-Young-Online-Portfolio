@@ -39,11 +39,11 @@ export default function ProjectCard({
     <TooltipProvider>
       <div className="group glass-hover rounded-2xl overflow-hidden hover-lift hover-tilt h-full flex flex-col glow">
         {/* Image Container */}
-        <div className="relative overflow-hidden bg-muted">
+        <div className="relative overflow-hidden bg-muted aspect-video">
           <img
             src={image}
             alt={title}
-            className="w-full h-48 lg:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
