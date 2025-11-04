@@ -297,20 +297,20 @@ export const projects = [
     liveUrl: 'https://a1getitdone.netlify.app/',
     featured: true,
   },
-  {
-    title: 'AI Resume Builder',
-    description:
-      'A web application that helps users create and customize their resumes using AI-driven templates and suggestions.',
-    image: aiResumeBuilder,
-    technologies: [
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'Shadcn/ui',
-      'Framer Motion',
-    ],
-    //githubUrl: "https://github.com/devByByron/read-easy",
-    liveUrl: 'https://resume-ai-copy-e76e2e76.base44.app/',
-    featured: true,
-  },
+  // {
+  //   title: 'AI Resume Builder',
+  //   description:
+  //     'A web application that helps users create and customize their resumes using AI-driven templates and suggestions.',
+  //   image: aiResumeBuilder,
+  //   technologies: [
+  //     'React',
+  //     'TypeScript',
+  //     'Tailwind CSS',
+  //     'Shadcn/ui',
+  //     'Framer Motion',
+  //   ],
+  //   //githubUrl: "https://github.com/devByByron/read-easy",
+  //   liveUrl: 'https://resume-ai-copy-e76e2e76.base44.app/',
+  //   featured: true,
+  // },
 ];
