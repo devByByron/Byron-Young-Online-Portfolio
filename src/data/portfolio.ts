@@ -20,7 +20,7 @@ export const personalInfo = {
   portrait: developerPortrait,
   socialLinks: {
     github: 'https://github.com/devByByron',
-    linkedin: 'http://www.linkedin.com/in/byron-young94',
+    linkedin: 'https://www.linkedin.com/in/byron-young94/',
     email: 'mailto:youngbk0308@gmail.com',
   },
 };

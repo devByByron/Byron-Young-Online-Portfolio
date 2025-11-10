@@ -545,35 +545,148 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border">
+      <footer className="py-12 border-t border-border bg-muted/30">
         <div className="container px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <div className="text-xl font-bold gradient-text">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Brand Column */}
+            <div className="flex flex-col space-y-4">
+              <div className="text-lg font-bold gradient-text">
                 &lt;Byron Young&gt;
               </div>
-              <p className="text-muted-foreground">
-                © 2025 {personalInfo.name}. All rights reserved.
-              </p>
+              {/* <p className="text-muted-foreground text-sm leading-relaxed">
+                {personalInfo.shortTagline}
+              </p> */}
             </div>
-            <div className="flex items-center space-x-4">
-              <a
-                href={personalInfo.socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href={personalInfo.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+
+            {/* Quick Links Column */}
+            <div className="flex flex-col space-y-4">
+              <h4 className="font-semibold text-foreground">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#hero"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#skills"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Skills
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#experience"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Experience
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#education"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Education
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            {/* Resources Column */}
+            <div className="flex flex-col space-y-4">
+              <h4 className="font-semibold text-foreground">Resources</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href={personalInfo.socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={personalInfo.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={personalInfo.socialLinks.email}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Email
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Icons Column */}
+            <div className="flex flex-col space-y-4">
+              <h4 className="font-semibold text-foreground">Connect</h4>
+              <div className="flex items-center space-x-4">
+                <a
+                  href={personalInfo.socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="GitHub Profile"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href={personalInfo.socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p className="text-muted-foreground text-sm">
+              © 2025 {personalInfo.name}. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
