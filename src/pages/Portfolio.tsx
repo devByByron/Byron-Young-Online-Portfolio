@@ -550,12 +550,9 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Brand Column */}
             <div className="flex flex-col space-y-4">
-              <div className="text-lg font-bold gradient-text">
-                &lt;Byron Young&gt;
+              <div className="text-2xl font-bold gradient-text">
+                Byron Young
               </div>
-              {/* <p className="text-muted-foreground text-sm leading-relaxed">
-                {personalInfo.shortTagline}
-              </p> */}
             </div>
 
             {/* Quick Links Column */}

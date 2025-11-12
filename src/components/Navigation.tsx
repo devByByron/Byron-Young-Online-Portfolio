@@ -72,7 +72,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('#hero')}
               className="text-xl lg:text-2xl font-bold gradient-text hover:scale-105 transition-transform"
             >
-              &lt;Byron Young&gt;
+              Byron Young
             </button>
           </div>
 

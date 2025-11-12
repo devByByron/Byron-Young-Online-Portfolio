@@ -102,13 +102,13 @@ export const skills = [
   {
     name: 'MS SQL Server',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
-    level: 4,
+    level: 3,
     category: 'Database' as const,
   },
   {
     name: 'MongoDB',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    level: 4,
+    level: 3,
     category: 'Database' as const,
   },
 
